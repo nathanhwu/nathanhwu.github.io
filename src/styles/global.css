@@ -8,8 +8,8 @@
   --text-link: #78c2ad;
   --text-link-light: #375a7f;
   --underline: #375a7f;
-  --header: 'Pacifico', cursive;
-  --body: 'Josefin Sans', sans-serif;
+  --header: 'Josefin Sans', sans-serif; 
+  --body: 'Karma', serif;
 }
 
 html {
@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  max-width: 540px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: justify;
 }
@@ -26,11 +26,13 @@ body {
 h1,
 h2 {
   font-family: var(--header);
-  font-weight: normal;
+  font-weight: bold;
+  text-transform: lowercase;
+  letter-spacing: 0.2ch;
 }
 
 h1 {
-  font-size: 2.6rem;
+  font-size: 3.0rem;
   margin: 0;
   margin-bottom: 5px;
 }
@@ -38,8 +40,8 @@ h1 {
 h2 {
   text-decoration: underline var(--underline);
   text-decoration-thickness: 4px;
-  text-underline-offset: 6px;
-  font-size: 2.1rem;
+  text-underline-offset: 8px;
+  font-size: 2.5rem;
   margin-bottom: 0;
 }
 
@@ -48,7 +50,8 @@ p {
   font-size: 1.1rem;
   hyphens: auto;
   line-height: 1.5;
-  text-indent: 1rem;
+  font-weight:normal
+
 }
 
 small,
@@ -65,13 +68,18 @@ li {
 
 .navbar__title {
   font-family: var(--header);
-  font-size: 1.3rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: lowercase;
+  margin-top: 10px;
+  letter-spacing: 0.2ch;
 }
 
 .navbar__menu {
-  font-family: var(--body);
-  font-size: 1.1rem;
+  font-family: var(--header);
+  font-size: 1.2rem;
   text-align: right;
+  text-transform: lowercase;
 }
 
 .navbar__title>a,
@@ -351,7 +359,7 @@ html.light {
 }
 
 /* Media Query */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 860px) {
   body {
     width: 350px;
   }
