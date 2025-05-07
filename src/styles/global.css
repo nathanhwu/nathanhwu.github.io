@@ -77,8 +77,6 @@ p {
 .navbar {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-top:2rem;
-  padding-bottom: 1.5rem;
   padding: 2rem 2rem 1.5rem
 }
 
@@ -242,8 +240,8 @@ p {
 /* Footer */
 footer {
   padding-top: 30px;
-  padding-bottom: 10px;
-  font-size:0.9rem;
+  padding-bottom: 20px;
+  font-size:0.85rem;
 }
 
 hr {
@@ -279,13 +277,10 @@ hr {
 
 .columns {
   margin: 0 auto;
-  justify-content:center;
-  max-width: 400px;
+  max-width: 500px;
   height:120px;
   display: flex;
-  justify-content: space-evenly; /* or center / space-around / flex-end, etc. */
-  gap: 0.4rem; /* spacing between items */
-
+  justify-content: space-around; /* or center / space-around / flex-end, etc. */
 }
 
 .footer_list {
@@ -300,7 +295,7 @@ hr {
   max-height: 18px;
   width:auto;
   height: auto;
-  margin-right: 10px;
+  margin-right: 5px;
   background-size: contain;
   background-repeat: no-repeat;
   
@@ -417,7 +412,7 @@ html.light {
 }
 
 /* Media Query */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
   body {
     min-width: 360px;
   }
@@ -432,11 +427,14 @@ html.light {
 
   .navbar__title {
     text-align: center;
+    justify-content: center;
     margin-top:1.5rem;
     margin-bottom:0.5rem;
   }
 
   .navbar__menu {
+    max-width: 400px;
+    margin:auto;
     justify-content: space-around; /* or center / space-around / flex-end, etc. */
 
   }
