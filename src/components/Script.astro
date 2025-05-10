@@ -1,0 +1,23 @@
+<script>
+    function colorMode() {
+        document.documentElement.classList.add("no-theme-transition");
+        if (
+            localStorage.theme === "light" ||
+            (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: light)").matches)
+        ) {
+            document.documentElement.classList.add("light");
+        } else {
+            document.documentElement.classList.remove("light");
+        }
+
+      }
+    
+    colorMode();
+    document.addEventListener('astro:after-swap', colorMode);
+    window.addEventListener("load", () => {
+    requestAnimationFrame(() => {
+        document.documentElement.classList.remove("no-theme-transition");
+    });
+});
+</script>

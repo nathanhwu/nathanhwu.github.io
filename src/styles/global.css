@@ -13,18 +13,30 @@
   --body: 'Karma', serif;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 html * {
   transition:500ms;
 }
 
+html.no-theme-transition *, 
+    html.no-theme-transition *::before, 
+    html.no-theme-transition *::after {
+      transition: none !important;
+    }
+
 html {
   background-color: var(--background);
+  
 }
 
 main {
   padding: 20px 0;
   font-size: 1.1rem;
 }
+
 main, footer {
   background-color: var(--background);
   color: var(--text);
@@ -39,6 +51,7 @@ header, footer {
 
 body {
   margin:0px;
+  
 }
 
 .content {
@@ -116,9 +129,17 @@ p {
   color: var(--text-link);
 }
 
-/* Gifs */
-.gif {
+/* headshot */
+.headshot {
   text-align: center;
+  margin-bottom:-20px;
+}
+
+.headshot>img {
+   object-fit: cover;
+   max-width:100%;
+   height:260px;
+   margin:none;
 }
 
 /* Badge */
@@ -314,8 +335,27 @@ hr {
 }
 
 /* 404 */
-.lost {
-  margin-top: 30%;
+.lost_inner {
+  display: flex;
+  padding-top: 10vh;
+  align-items: center;
+  flex-direction: column;
+
+
+  opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+}
+
+.lost_inner > img {
+  margin: 20px;
+}
+
+.lost__body {
   text-align: center;
 }
 
@@ -325,10 +365,7 @@ hr {
   border: 0;
   font-size: 7.5rem;
   letter-spacing: 10px;
-}
-
-.lost__body {
-  color: #5C5B77;
+  color: var(--text-link);
 }
 
 .lost__link {
@@ -411,6 +448,10 @@ html.light {
   border-color: var(--text-link-light);
 }
 
+.light .lost__header, .light .lost__link {
+  color: var(--text-link-light);
+}
+
 /* Media Query */
 @media only screen and (max-width: 700px) {
   body {
@@ -441,6 +482,12 @@ html.light {
 
   .navbar__menu>a {
     margin: 0 11px;
+  }
+
+  .headshot{
+    float:none;
+    margin:0;
+    margin-bottom: -10px;
   }
 
   .skills__img {

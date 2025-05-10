@@ -1,17 +1,31 @@
 ---
 const description = "404";
-import '../styles/global.css';
----
-<layout>
-    <div class="lost">
-        <div class="gif">
-            <img src="/.netlify/images?url=/images/404.webp" role="presentation" width="300" height="259" decoding="async">
-        </div>
-        <h1 class="lost__header">{ description }</h1>
-        <p class="lost__body">It seems like you've wandered into the wrong forest!</p>
-        <p>
-            <a class="lost__link" href="/">Return Home</a>
-        </p>
-    </div>
-</layout>
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
+import ThemeIcon from '../components/ThemeIcon.astro';
+
+import Head from '../components/Head.astro';
+import Script from '../components/Script.astro';
+import Layout from "../layouts/Layout.astro";
+
+import '../styles/global.css';
+const pageTitle = "Nathan Wu | 404: Page Not Found";
+
+---
+<!DOCTYPE html>
+
+<Head pageTitle = {pageTitle}/>
+
+<html lang="en">
+    <body>
+        <main class="lost">
+            <div class="lost_inner content">
+                <img src="/images/404.webp" role="presentation" width="300" height="259" decoding="async">
+                <h1 class="lost__header">{ description }</h1>
+                <p class="lost__body">It seems like you've wandered into the wrong forest!</p>
+                <a class="lost__link" href="/">Return Home</a>
+            </div>
+        </main>
+    </body>
+</html>
