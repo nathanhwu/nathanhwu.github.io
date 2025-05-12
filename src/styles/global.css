@@ -4,11 +4,11 @@
   --accent: #17171f;
   --accent-2: rgb(41, 32, 55);
   --background-light: #fcebf3;
-  --accent-light: #f7c4dc;
+  --accent-light: #fad6e7;
   --text: #eff1f5;
   --text-light: #1e1e2e;
   --text-link: #78c2ad;
-  --text-link-light: #456990;
+  --text-link-light: #3373b7;
   --header: 'Josefin Sans', sans-serif; 
   --body: 'Karma', serif;
 }
@@ -85,6 +85,15 @@ p {
   line-height: 1.5;
 }
 
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+img {
+  object-fit: cover;
+}
+
 /* Navigation Bar */
 
 .navbar {
@@ -136,7 +145,6 @@ p {
 }
 
 .headshot>img {
-   object-fit: cover;
    max-width:100%;
    height:260px;
    margin:none;
@@ -262,7 +270,7 @@ p {
 footer {
   padding-top: 30px;
   padding-bottom: 20px;
-  font-size:0.85rem;
+  font-size:0.9rem;
 }
 
 hr {
@@ -273,10 +281,6 @@ hr {
   width: 40%;
 }
 
-.footer__link {
-  color: var(--text-link);
-  text-decoration: none;
-}
 
 .footer__heading{
     margin: 0;
@@ -299,7 +303,7 @@ hr {
 .columns {
   margin: 0 auto;
   max-width: 500px;
-  height:120px;
+  height:130px;
   display: flex;
   justify-content: space-around; /* or center / space-around / flex-end, etc. */
 }
@@ -307,16 +311,17 @@ hr {
 .footer_list {
   display: flex;
   align-items: center;
-  height: 25px;
+  height: 23px;
 }
 
 .icon {
   display: inline-block;
-  max-width: 18px;
-  max-height: 18px;
+  max-width: 16px;
+  max-height: 16px;
   width:auto;
   height: auto;
   margin-right: 5px;
+  padding-bottom:4px;
   background-size: contain;
   background-repeat: no-repeat;
   
@@ -371,6 +376,12 @@ hr {
 .lost__link {
   color: var(--text-link);
   text-decoration: none;
+}
+
+.cv {
+  width:100%;
+  height:65vh;
+  border:none;
 }
 
 /* Theme Icon */
@@ -440,7 +451,7 @@ html.light {
   color: var(--text-link-light);
 }
 
-.light .footer__link {
+.light a {
   color: var(--text-link-light);	
 }
 
