@@ -14,14 +14,22 @@
 
     #themeToggle:hover {
         cursor: pointer;
-        rotate: 10deg;
     }
 
-    .moon { fill: #eff1f5; }
-    .sun { fill: transparent; }
+    .moon { fill: #eff1f5; display: flex;}
+    .sun { fill: transparent; display: none}
 
-    :global(.light) .moon { fill: transparent; }
-    :global(.light) .sun { fill: #1e1e2e; }
+    :global(.light) .moon { fill: transparent; display: none}
+    :global(.light) .sun { fill: #1e1e2e; display: flex}
+
+    #themeToggle:hover .moon{
+        fill: #78c2ad;
+    }
+
+    #themeToggle:hover .sun{
+        fill: #3373b7;
+    }
+
 </style>
 <script is:inline >
     const theme = (() => {

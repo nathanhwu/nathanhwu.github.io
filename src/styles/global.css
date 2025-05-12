@@ -1,77 +1,126 @@
 /* Global styles */
 :root {
   --background: #1e1e2e;
+  --accent: #17171f;
+  --accent-2: rgb(41, 32, 55);
   --background-light: #fcebf3;
-  --button: #78c2ad;
+  --accent-light: #fad6e7;
   --text: #eff1f5;
   --text-light: #1e1e2e;
   --text-link: #78c2ad;
-  --text-link-light: #375a7f;
-  --underline: #375a7f;
-  --header: 'Pacifico', cursive;
-  --body: 'Josefin Sans', sans-serif;
+  --text-link-light: #3373b7;
+  --header: 'Josefin Sans', sans-serif; 
+  --body: 'Karma', serif;
 }
+
+@view-transition {
+  navigation: auto;
+}
+
+html * {
+  transition:500ms;
+}
+
+html.no-theme-transition *, 
+    html.no-theme-transition *::before, 
+    html.no-theme-transition *::after {
+      transition: none !important;
+    }
 
 html {
   background-color: var(--background);
+  
+}
+
+main {
+  padding: 20px 0;
+  font-size: 1.1rem;
+}
+
+main, footer {
+  background-color: var(--background);
   color: var(--text);
+  font-family: var(--body);
+  font-weight:normal;
+  margin:0px;
+}
+
+header, footer {
+  background-color: var(--accent);
 }
 
 body {
-  max-width: 540px;
+  margin:0px;
+  
+}
+
+.content {
+  max-width: 800px;
   margin: 0 auto;
   text-align: justify;
+  padding: 0 40px;
 }
 
 h1,
 h2 {
   font-family: var(--header);
-  font-weight: normal;
+  font-weight: bold;
+  text-transform: lowercase;
+  letter-spacing: 0.2ch;
 }
 
 h1 {
-  font-size: 2.6rem;
+  font-size: 3.0rem;
   margin: 0;
   margin-bottom: 5px;
 }
 
 h2 {
-  text-decoration: underline var(--underline);
-  text-decoration-thickness: 4px;
-  text-underline-offset: 6px;
-  font-size: 2.1rem;
+  font-size: 2.5rem;
   margin-bottom: 0;
 }
 
 p {
-  font-family: var(--body);
-  font-size: 1.1rem;
   hyphens: auto;
   line-height: 1.5;
-  text-indent: 1rem;
 }
 
-small,
-li {
-  font-family: var(--body);
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+
+img {
+  object-fit: cover;
 }
 
 /* Navigation Bar */
+
 .navbar {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 0.8rem;
+  padding: 2rem 2rem 1.5rem
 }
 
 .navbar__title {
   font-family: var(--header);
-  font-size: 1.3rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: lowercase;
+  letter-spacing: 0.2ch;
+  display: flex;
+  align-items: center;
 }
 
 .navbar__menu {
-  font-family: var(--body);
-  font-size: 1.1rem;
-  text-align: right;
+  font-family: var(--header);
+  font-size: 1.4rem;
+  text-transform: lowercase;
+  height:50px;
+  display: flex;
+  align-items: center; /* vertical alignment */
+  justify-content: flex-end; /* or center / space-around / flex-end, etc. */
+  gap: 0.4rem; /* spacing between items */
 }
 
 .navbar__title>a,
@@ -85,23 +134,25 @@ li {
 }
 
 .navbar__title>a:hover,
-.navbar__menu>a:hover,
-.navbar__menu>a:focus {
-  text-decoration: underline var(--underline);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
+.navbar__menu>a:hover {
+  color: var(--text-link);
 }
 
-/* Gifs */
-.gif {
-  margin: 20px 0 0 0;
+/* headshot */
+.headshot {
   text-align: center;
+  margin-bottom:-20px;
+}
+
+.headshot>img {
+   max-width:100%;
+   height:260px;
+   margin:none;
 }
 
 /* Badge */
 .badge {
   background-color: #584966;
-  color: var(--text);
   border-radius: 6px;
   font-family: var(--body);
   font-weight: 600;
@@ -129,10 +180,6 @@ li {
 .badge__link {
   color: var(--text-link);
   text-decoration: none;
-}
-
-.badge__link:hover {
-  text-decoration: underline;
 }
 
 /* Cards */
@@ -186,7 +233,7 @@ li {
 .btn {
   text-align: center;
   background: rgba(0, 0, 0, 0);
-  border: 2px solid var(--button);
+  border: 2px solid var(--text-link);
   border-radius: 8px;
   color: var(--text);
   font: 600 16px var(--body);
@@ -195,8 +242,8 @@ li {
 }
 
 .btn:hover {
-  background-color: var(--button);
-  color: var(--text-light);
+  background-color: var(--text-link);
+  color: var(--background);
   cursor: pointer;
 }
 
@@ -221,53 +268,99 @@ li {
 
 /* Footer */
 footer {
-  margin: 4rem 0;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-size:0.9rem;
 }
 
-.footer__link {
-  color: var(--text-link);
-  text-decoration: none;
+hr {
+  height: 4px;
+  border:none;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  width: 40%;
 }
 
-.footer {
-  cursor: default;
+
+.footer__heading{
+    margin: 0;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.social-media-list {
   list-style: none;
+  margin-left: 0;
   padding: 0;
+  margin:0;
 }
 
-.icon__btn {
-  display: inline-block;
-  padding: 0 0.5rem;
+.footer-row {
+  display: block;
+  width: 100%;
 }
 
-.icon__link {
+.columns {
+  margin: 0 auto;
+  max-width: 500px;
+  height:130px;
   display: flex;
-  padding: 10px;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  border: 2px solid #fdebf3;
+  justify-content: space-around; /* or center / space-around / flex-end, etc. */
 }
 
-.icon__link:hover {
-  border-color: var(--text-link);
+.footer_list {
+  display: flex;
+  align-items: center;
+  height: 23px;
+}
+
+.icon {
+  display: inline-block;
+  max-width: 16px;
+  max-height: 16px;
+  width:auto;
+  height: auto;
+  margin-right: 5px;
+  padding-bottom:4px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  
 }
 
 .git-icon {
-  content: url("/.netlify/images?url=/images/github-mark-white.svg");
+  content: url("/images/github-mark-white.svg");
 }
 
 .mail-icon {
-  content: url("/.netlify/images?url=/images/mail-white.svg");
+  content: url("/images/mail-white.svg");
 }
 
 .linked-in {
-  content: url("/.netlify/images?url=/images/li-in-white.png");
+  content: url("/images/li-in-white.png");
 }
 
 /* 404 */
-.lost {
-  margin-top: 30%;
+.lost_inner {
+  display: flex;
+  padding-top: 10vh;
+  align-items: center;
+  flex-direction: column;
+
+
+  opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+}
+
+.lost_inner > img {
+  margin: 20px;
+}
+
+.lost__body {
   text-align: center;
 }
 
@@ -277,10 +370,7 @@ footer {
   border: 0;
   font-size: 7.5rem;
   letter-spacing: 10px;
-}
-
-.lost__body {
-  color: #5C5B77;
+  color: var(--text-link);
 }
 
 .lost__link {
@@ -288,18 +378,34 @@ footer {
   text-decoration: none;
 }
 
+.cv {
+  width:100%;
+  height:65vh;
+  border:none;
+}
+
 /* Theme Icon */
+
 html.light {
+  background-color: var(--background-light);
+}
+
+.light main, .light footer {
   background-color: var(--background-light);
   color: var(--text-light);
 }
 
-.light .navbar__title>a {
+.light header, .light footer {
+  background-color: var(--accent-light);
+}
+
+.light .navbar__title>a, .light .navbar__menu>a {
   color: var(--text-light);
 }
 
-.light .navbar__menu>a {
-  color: var(--text-light);
+.light .navbar__title>a:hover,
+.light .navbar__menu>a:hover {
+  color: var(--text-link-light);
 }
 
 .light .card__title {
@@ -312,10 +418,13 @@ html.light {
 
 .light .btn {
   color: var(--text-light);
+  border-color: var(--text-link-light);
+  color: var(--text-light);
 }
 
 .light .btn:hover {
-  color: var(--text);
+  color: var(--background-light);
+  background-color: var(--text-link-light);
 }
 
 .light .icon__link {
@@ -327,22 +436,22 @@ html.light {
 }
 
 .light .git-icon {
-  content: url("/.netlify/images?url=/images/github-mark.svg");
+  content: url("/images/github-mark.svg");
 }
 
 .light .mail-icon {
-  content: url("/.netlify/images?url=/images/mail.svg");
+  content: url("/images/mail.svg");
 }
 
 .light .linked-in {
-  content: url("/.netlify/images?url=/images/li-in.png");
+  content: url("/images/li-in.png");
 }
 
 .light .badge__link {
   color: var(--text-link-light);
 }
 
-.light .footer__link {
+.light a {
   color: var(--text-link-light);	
 }
 
@@ -350,10 +459,18 @@ html.light {
   border-color: var(--text-link-light);
 }
 
+.light .lost__header, .light .lost__link {
+  color: var(--text-link-light);
+}
+
 /* Media Query */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   body {
-    width: 350px;
+    min-width: 360px;
+  }
+
+  h1, h2 {
+    text-align: center;
   }
 
   .navbar {
@@ -362,14 +479,26 @@ html.light {
 
   .navbar__title {
     text-align: center;
+    justify-content: center;
+    margin-top:1.5rem;
+    margin-bottom:0.5rem;
   }
 
   .navbar__menu {
-    text-align: center;
+    max-width: 400px;
+    margin:auto;
+    justify-content: space-around; /* or center / space-around / flex-end, etc. */
+
   }
 
   .navbar__menu>a {
     margin: 0 11px;
+  }
+
+  .headshot{
+    float:none;
+    margin:0;
+    margin-bottom: -10px;
   }
 
   .skills__img {
