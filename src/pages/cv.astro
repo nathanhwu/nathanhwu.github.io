@@ -3,5 +3,8 @@ import Layout from '../layouts/Layout.astro';
 const pageTitle = "CV | Nathan Wu";
 ---
 <Layout pageTitle={pageTitle}>
-    <object class="cv" data="/files/Wu_Nathan_CV.pdf" type='application/pdf'> <button class="btn"><a href="/files/Wu_Nathan_CV.pdf">Download CV</a></button></object>
+    <div class="center">
+    <iframe class="cv" src="/files/Wu_Nathan_CV.pdf"></iframe>
+    <a href="/files/Wu_Nathan_CV.pdf" target="_blank"></a><button class="btn">Download</button></a>
+    </div>
 </Layout>
