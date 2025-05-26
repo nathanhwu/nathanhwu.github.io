@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+interface Props {
+    entry: CollectionEntry<'resources'>;
+}
+
+const {entry} = Astro.props;
+
+const {Content, headings} = await render(entry);
+---
+<hr>
+<li class="resource expander-container">
+    <div class="resource__row">
+        <img
+            class="resource__img"
+            src={entry.data.image.url}
+            alt={entry.data.image.alt}
+            role="presentation"
+            loading="lazy"
+            decoding="async"
+        />
+        <div class="resource__info">
+            <h3 class="resource__title">
+                {entry.data.title}
+            </h3>
+            <p>
+            {entry.data.author}
+            </p>
+            <a href={entry.data.link} target="_blank">{entry.data.link} </a>
+        </div>
+
+        <div class="expander-button" onclick="toggleExpander(this)">
+            <span class="arrow">&#9654;</span>
+        </div>
+    </div>
+    <div class="resource__description expander-content">
+        <Content />
+    </div>
+</li>
