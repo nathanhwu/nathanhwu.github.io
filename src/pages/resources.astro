@@ -4,15 +4,14 @@ import { getCollection, render} from "astro:content";
 import Resource from "../components/Resource.astro";
 import Layout from '../layouts/Layout.astro';
 const pageTitle = "Resources | Nathan Wu";
-
-const allPosts = await getCollection("posts");
 const allResources = await getCollection("resources");
 
+allResources.sort((a, b) => -1 * (b.data.sortIndex - a.data.sortIndex));
 ---
 <Layout pageTitle={pageTitle}>
     <h2>Resources</h2>
     <p>
-        Here's a collection of resources and sites that I think are cool and have shaped my scientific thinking over the years. 
+        Here's a collection of resources and sites that I think are cool. These sites and books have played no small part in shaping my scientific thinking over the years. 
         These span computer science, physics, biology, and neuroscience, and are listed approximately in chronological order of when I came across them.
         The first few are things that I first encountered as a middle/high schooler, and some of the last few are things I'm currently still working through!
     </p>
