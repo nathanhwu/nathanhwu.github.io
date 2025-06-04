@@ -1,5 +1,5 @@
 ---
-sortIndex: 0
+sortIndex: 1
 title: The Game of Life
 author: John Conway
 link: https://playgameoflife.com
@@ -8,4 +8,4 @@ image:
     alt: The Game of Life
 ---
 
-Description coming soon!
+Notes coming soon!

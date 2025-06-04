@@ -8,4 +8,4 @@ image:
     alt: 'Nonlinear Dynamics and Chaos'
 ---
 
-[YouTube playlist](https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V)
+Notes coming soon! [YouTube playlist](https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V)

@@ -6,7 +6,7 @@ const resourcesCollection = defineCollection({
   schema: z.object({
     sortIndex: z.number(),
     title: z.string(),
-    author: z.string(),
+    author: z.string().optional(),
     link:z.string(),
     image: z.object({
       url: z.string(),
