@@ -1,36 +1,13 @@
 import { z, defineCollection } from "astro:content";
 import { glob } from 'astro/loaders';
 
-const projectsCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/projects" }),
+const resourcesCollection = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/resources" }),
   schema: z.object({
+    sortIndex: z.number(),
     title: z.string(),
-    description: z.string(),
-    image: z.object({
-      url: z.string(),
-      alt: z.string()
-    }),
-    worksImage1: z.object({
-      url: z.string(),
-      alt: z.string()
-    }),
-    worksImage2: z.object({
-      url: z.string(),
-      alt: z.string()
-    }),
-    platform: z.string(),
-    stack: z.string(),
-    website: z.string(),
-    github: z.string(),
-  })
-});
-
-const postsCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/posts" }),
-  schema: z.object({
-    title: z.string(),
-    author: z.string(),
-    date: z.string(),
+    author: z.string().optional(),
+    link:z.string(),
     image: z.object({
       url: z.string(),
       alt: z.string()
@@ -39,7 +16,6 @@ const postsCollection = defineCollection({
 });
 
 export const collections = {
-  projects: projectsCollection,
-  posts: postsCollection
+  resources: resourcesCollection
 };
 
