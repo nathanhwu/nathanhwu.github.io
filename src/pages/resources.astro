@@ -4,11 +4,11 @@ import { getCollection, render} from "astro:content";
 import Resource from "../components/Resource.astro";
 import Layout from '../layouts/Layout.astro';
 const pageTitle = "Resources | Nathan Wu";
+const description = "A collection of resources spanning computer science, physics, biology, and neuroscience from Harvard PhD student Nathan Wu.";
 const allResources = await getCollection("resources");
-
 allResources.sort((a, b) => -1 * (b.data.sortIndex - a.data.sortIndex));
 ---
-<Layout pageTitle={pageTitle}>
+<Layout pageTitle={pageTitle} description={description}>
     <h1>Resources</h1>
     <p>
         Here's a collection of resources and sites that I think are cool. These sites and books have played no small part in shaping my scientific thinking over the years. 
