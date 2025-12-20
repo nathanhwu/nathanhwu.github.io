@@ -330,7 +330,11 @@ hr {
 }
 
 .linked-in {
-  content: url("/images/li-in-white.png");
+  content: url("/images/li-in-white.svg");
+}
+
+.google-icon {
+  content: url("/images/google-white.svg");
 }
 
 /* 404 */
@@ -439,7 +443,11 @@ hr {
 }
 
 .light .linked-in {
-  content: url("/images/li-in.png");
+  content: url("/images/li-in.svg");
+}
+
+.light .google-icon {
+  content: url("/images/google.svg");
 }
 
 .light .badge__link {
